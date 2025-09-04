@@ -3,7 +3,7 @@
 **Código da Disciplina**: IBM8936<br>
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
+Projeto back-end para monitoria dos alunos Arthur Maurity, Guilherme Reis, João Arthur e Patrick Gougeon
 
 ## Instalação 
 **Linguagens**: Python, Django<br>
