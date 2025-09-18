@@ -15,13 +15,11 @@ hide:
     O SGM é uma plataforma web centralizada que visa automatizar o agendamento, registro e acompanhamento de sessões de monitoria no Ibmec, conectando alunos, monitores e coordenadores de forma eficiente para resolver a atual dependência de planilhas e comunicação manual.
 
     **Integrantes:**
-    * Nome Completo do Aluno 1
-    * Nome Completo do Aluno 2
-    * Nome Completo do Aluno 3
+     Arthur Maurity, Guilherme Reis, João Arthur e Patrick Gougeon
     
     **Tecnologias Planejadas:**
-    * Python (Backend)
-    * Django / Flask (Framework Web)
+     Python (Backend), 
+     Django / Flask (Framework Web)
 
     [:octicons-arrow-right-24: Acessar o Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8004_I)
 
