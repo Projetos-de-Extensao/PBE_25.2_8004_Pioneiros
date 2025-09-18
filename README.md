@@ -3,7 +3,7 @@
 **Código da Disciplina**: IBM8936<br>
 
 ## Sobre 
-Projeto back-end para monitoria dos alunos Arthur Maurity, Guilherme Reis, João Arthur e Patrick Gougeon
+Projeto back-end para monitoria dos alunos Arthur Maurity(202407173314), Guilherme Reis(202407095909), João Arthur(202307164501) e Patrick Gougeon(202407095747)
 
 ## Instalação 
 **Linguagens**: Python, Django<br>
