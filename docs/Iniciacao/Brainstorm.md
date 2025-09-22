@@ -53,9 +53,6 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 </p>
  
 ---
-
- 
----
  
 ### 4. Outras perguntas pertinentes ao contexto
 
@@ -74,34 +71,32 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ### 6. Quais informações seriam interessante para o cliente?
 <p align = "justify">
-   <b>XXX</b> - Informações...
-   
-   <b>ZZZZ</b> - O cliente usuário poderá acessar informações...
+<b>1</b> - Informações sobre o status da candidatura em tempo real, o desempenho dos monitores e o impacto geral do programa no rendimento acadêmico dos alunos assistidos.<br>
+<b>2</b> - O cliente usuário (professor) poderá acessar informações detalhadas sobre cada candidato inscrito em sua vaga, como o histórico acadêmico, o CR na disciplina e o status atual no processo seletivo.<br>
+<b>3</b> - O usuário (aluno) poderá ver todo o andamento de sua inscrição, os agendamentos de entrevistas, o resultado final e, após aprovado, um dashboard com suas horas registradas e o feedback de seu desempenho.<br>
 
-   <b>WWWWs</b> - O usuário poderá ver scouts de partidas do torneio, ver as regras dos torneios, locais e data das partidas.
-   
 </p>
  
 ### Requisitos elicitados
  
 |ID|Descrição|
 |----|-------------|
-|BS01| O cliente...|
-|BS02| O cliente...|
-|BS03| O cliente...|
-|BS04| O cliente...|
-|BS05| O cliente...|
-|BS06| O cliente...|
-|BS07| O cliente...|
-|BS08| O cliente...|
-|BS09| O cliente...|
-|BS10| O produto...|
-|BS11| O produto...|
-|BS12| O produto...|
-|BS13| O produto...|
-|BS14| O produto...|
-|BS15| O produto...|
- 
+|BS01| O cliente (aluno) deve poder se inscrever no programa de TA/Monitoria através de um formulário online.|
+|BS02| O cliente (aluno) deve poder visualizar todas as vagas de monitoria disponíveis, com seus respectivos pré-requisitos e descrições.|
+|BS03| O cliente (aluno) deve poder acompanhar o status de sua candidatura em tempo real (recebida, em análise, entrevista agendada, aprovado, reprovado).|
+|BS04| O cliente (monitor aprovado) deve poder registrar a frequência, a data e o tema de cada sessão de monitoria realizada.|
+|BS05| O cliente (professor) deve poder cadastrar novas vagas de monitoria para suas disciplinas, especificando os requisitos necessários.|
+|BS06| O cliente (professor) deve poder acessar a lista de todos os candidatos inscritos para sua vaga, visualizando suas informações e elegibilidade.|
+|BS07| O cliente (professor) deve poder informar sua disponibilidade de horários no sistema para a realização das entrevistas.|
+|BS08| O cliente (Instituto CASA) deve poder aprovar ou rejeitar as vagas de monitoria cadastradas pelos professores antes de serem publicadas.|
+|BS09| O cliente (Instituto CASA) deve poder visualizar um dashboard com as métricas gerais do programa (total de inscritos, vagas preenchidas, etc.).|
+|BS10| O produto (sistema) deve validar automaticamente os critérios de elegibilidade do candidato (CR geral, CR na disciplina, horas cursadas) no momento da inscrição.|
+|BS11| O produto (sistema) deve enviar notificações automáticas por e-mail para os envolvidos em cada etapa chave do processo.|
+|BS12| O produto (sistema) deve cruzar a disponibilidade do professor com a dos alunos interessados para sugerir horários de entrevista.|
+|BS13| O produto (sistema) deve gerenciar diferentes perfis de usuário (Aluno, Professor, Instituto CASA), cada um com suas permissões específicas de acesso e ação.|
+|BS14| O produto (sistema) deve gerar relatórios sobre a frequência dos alunos nas monitorias e o desempenho geral do programa.|
+|BS15| O produto (sistema) deve registrar a assinatura digital do termo de compromisso pelo aluno aprovado.|
+
 ## Conclusão
 <p align = "justify">
 Através da aplicação da técnica, foi possível elicitar alguns dos primeiros requisitos do projeto.
@@ -114,4 +109,4 @@ Através da aplicação da técnica, foi possível elicitar alguns dos primeiros
 ## Autor(es)
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| DD/MM/YYYY | 1.0 | Criação do documento | XXX XXXX, XXXX XXXX, YYY YYYY e ZZZ XXXX |
+| 22/09/2025 | 1.0 | Criação do documento | Arthur Maurity |
