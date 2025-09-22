@@ -47,4 +47,7 @@ TutorMe: TutorMe se destaca ao oferecer uma rede de tutores sob demanda integrad
 
 Pesquisa realizada para compreensão das principais características do Aplicativo de Monitoria e Teacher Assistants.
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+###Links
+Accudemia: https://www.engineerica.com/accudemia/
+Penji: https://www.penjiapp.com/
+TutorMe: https://tutormeeducation.com/
