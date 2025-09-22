@@ -25,24 +25,21 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 <b>1</b> - Deve ser uma plataforma onde qualquer pessoa possa se candidatar e acompanhar seu status no processo seletivo de TA e Monitoria de forma simples e centralizada.<br>
 <b>2</b> - A plataforma deve fornecer as ferramentas para automatizar a comunicação, o agendamento de entrevistas e o envio de devolutivas a todos os envolvidos.<br>
 <b>3</b> - O objetivo da aplicação é conectar coordenadores, professores e alunos, otimizando todo o fluxo de seleção e acompanhamento do programa.<br>
-<b>4</b> - O principal objetivo da aplicação é a eliminação do trabalho manual da equipe de coordenação, permitindo um gerenciamento de ponta a ponta que seja eficiente, rastreável e escalável.<br>
+<b>4</b> - O principal objetivo da aplicação é a eliminação do trabalho manual da equipe do CASA, permitindo um gerenciamento de ponta a ponta que seja eficiente, rastreável e escalável.<br>
 <b>5</b> - A plataforma deve gerenciar as inscrições, a elegibilidade dos candidatos, a agenda de entrevistas e o registro de frequência dos monitores de forma integrada.<br>
 </p>
- 
+ 
 ---
  
 ### 2. Como será o processo para cadastrar um novo cliente?
  
 <p align = "justify">
-<b>XXXX</b> - O moderador deverá fazer login e...
- 
-<b>YYYY</b> - O cliente...
- 
-<b>WWWW</b> - Com o usuário logado, ele deverá...
-
-<b>ZZZZ</b> - O cliente...
- 
-<b>KKK</b> - O cliente...
+<b>1</b> - O Instituto CASA deverá fazer login e cadastrar as disciplinas e vagas disponíveis para o programa, definindo os pré-requisitos para a candidatura.<br>
+<b>2</b> - O cliente (aluno) acessará o portal e iniciará sua inscrição para o programa de TA/Monitoria, fornecendo suas informações básicas como nome, matrícula, curso e período.<br>
+<b>3</b> - Com o usuário logado, ele deverá selecionar a disciplina desejada, preencher os campos de elegibilidade (CR geral e CR da disciplina) e anexar os documentos necessários, como o histórico escolar.<br>
+<b>4</b> - O cliente receberá uma confirmação imediata do sistema. Caso não atenda aos critérios (CR, horas), será notificado automaticamente sobre a sua inelegibilidade.<br>
+<b>5</b> - O cliente que atender aos pré-requisitos terá sua inscrição confirmada e seu status alterado para "Candidato", aguardando as próximas etapas do processo seletivo.<br>
+</p>
  
 ---
  
