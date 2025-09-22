@@ -7,19 +7,18 @@ title: Design Thinking
 
 ### **1. Capa**
 
-- Título do Projeto
-- Nome da Equipe
-- Data
-- Logo da Empresa/Organização (se aplicável)
+- Projeto TA's
+- Pioneiros (Arthur Maurity, Guilherme Reis, João Arthur e Patrick Gougeon)
+- 27/11/2025
 
 ---
 
 ### **2. Introdução**
 
-- **Contexto do Projeto**: Breve descrição do problema ou oportunidade.
-- **Objetivo**: O que se espera alcançar com o projeto.
-- **Público-Alvo**: Quem será impactado pela solução.
-- **Escopo**: Limites e abrangência do projeto.
+- **Contexto do Projeto**: O gerenciamento do programa de TAs e Monitores é um processo totalmente manual, ineficiente e descentralizado.
+- **Objetivo**: Desenvolver uma plataforma digital para automatizar, centralizar e otimizar todo o ciclo de vida do programa.
+- **Público-Alvo**: Alunos (candidatos e monitores), professores e a equipe do CASA.
+- **Escopo**: O sistema abrangerá desde a publicação de vagas e inscrição de candidatos até o agendamento e o registro de frequência.to.
 
 ---
 
