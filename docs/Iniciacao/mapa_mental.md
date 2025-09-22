@@ -21,12 +21,11 @@ Foi levantado um ponto importante sobre o app e, assim, foi produzido o mapa men
  
 ### Mapa mental 1
  
-[![Mapa mental Entrevista](../assets/Mapas_Mentais/image.png)](../assets/Mapas_Mentais/image.png)
- 
+ <img width="806" height="978" alt="TPJFYXD14CRlWRn3WvTim7yWwi8GDfaakWTnsHKyLwOhixNsT8tTFIFhuiE81r7mjFW4ys9Mp_JiAaJ88NHzNVsh-ghcn0TmeIAhAwYdayo7QuEBwIITh0bA1vMwcKwKUkHGgnkrWk93wRYnEcV3JZtORlCd-KfzwJMbGxI7LFdBpVFyEAbsfi53ejLglTcEgUh6rUQWRFDqjTcyI39sO4ly3rY" src="https://github.com/user-attachments/assets/efd35d0f-6c5a-41f7-be54-05b4a6327a8b" />
+
  
 ### Mapa mental 2
  
-[![Mapa mental Brainstorm](../assets/Mapas_Mentais/image.png)](../assets/Mapas_Mentais/image.png)
  
 ## Conclusão
  
