@@ -46,16 +46,13 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 3. Como será a forma de adicionar produtos?
  
 <p align = "justify">
-<b>XXXX</b> - O cliente ao cadastrar...
+<b>1</b> - O cliente (professor), ao cadastrar uma nova vaga de monitoria, deverá acessar seu perfil no sistema e selecionar a opção "Publicar Vaga".<br>
+<b>2</b> - O produto (a vaga) tem campos específicos que precisam ser preenchidos, como a disciplina, os pré-requisitos (CR mínimo, horas), as responsabilidades do monitor e o número de vagas ofertadas.<br>
+<b>3</b> - O produto (a vaga), após o cadastro inicial, fica com o status "Pendente de Aprovação", aguardando a validação do Instituto CASA para se tornar pública.<br>
+<b>4</b> - O produto (a vaga), uma vez aprovado, se torna visível no portal para que os alunos possam se candidatar.<br>
 </p>
  
-<p align = "justify">
-<b>YYYYY</b> - O produto tem...
-</p>
- 
-<b>ZZZZ</b> - O produto....
- 
-<b>XXXX</b> - O produto....
+---
 
  
 ---
@@ -63,11 +60,10 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 4. Outras perguntas pertinentes ao contexto
 
 <p align = "justify">
-<b>XXXX</b> - Com a localização...
- 
-<b>YYYY</b> - O cliente...
- 
-<b>ZZZ</b> - O cliente...
+<b>1</b> - Com a localização centralizada das informações, o sistema enviará notificações automáticas por e-mail em cada etapa: confirmação de inscrição, agendamento de entrevista e resultado final (aprovado ou não).<br>
+<b>2</b> - O cliente (aluno) receberá um convite com as opções de horários de entrevista, que são baseadas na disponibilidade previamente informada pelo professor e gerenciada pelo Instituto CASA.<br>
+<b>3</b> - O cliente (monitor aprovado) deverá registrar a frequência e o tema de cada sessão de monitoria diretamente no sistema, permitindo que o professor e o Instituto CASA acompanhem o andamento e o impacto do programa.<br>
+</p>
  
 ---
  
