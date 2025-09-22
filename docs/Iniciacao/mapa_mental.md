@@ -43,5 +43,5 @@ O mapa mental é uma ficha de estudos que ajuda a dar uma visão geral do tema, 
 ## Versionamento
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| dd/mm/yy | 1.0 | Criação do documento | xxx xxxx |
+| 22/09/25 | 1.0 | Criação do documento | Arthur Maurity |
 | dd/mm/yy | 2.0 | Adicionado Mapa mental 2 | xxxx xxxx |
