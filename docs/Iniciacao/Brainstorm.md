@@ -22,16 +22,11 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 1. Qual o objetivo principal da aplicação?
  
 <p align = "justify">
-<b>1</b> - Deve ser uma plataforma onde qualquer pessoa possa se candidatar e acompanhar seu status no processo seletivo de TA e Monitoria de forma simples e centralizada.
-</p>
- 
-<b>2</b> - A plataforma deve fornecer as ferramentas para automatizar a comunicação, o agendamento de entrevistas e o envio de devolutivas a todos os envolvidos.
- 
-<b>3</b> - O objetivo da aplicação é conectar coordenadores, professores e alunos, otimizando todo o fluxo de seleção e acompanhamento do programa.
- 
-<b>4</b> - O principal objetivo da aplicação é a eliminação do trabalho manual da equipe de coordenação, permitindo um gerenciamento de ponta a ponta que seja eficiente, rastreável e escalável.
- 
-<b>5</b> - A plataforma deve gerenciar as inscrições, a elegibilidade dos candidatos, a agenda de entrevistas e o registro de frequência dos monitores de forma integrada.
+<b>1</b> - Deve ser uma plataforma onde qualquer pessoa possa se candidatar e acompanhar seu status no processo seletivo de TA e Monitoria de forma simples e centralizada.<br>
+<b>2</b> - A plataforma deve fornecer as ferramentas para automatizar a comunicação, o agendamento de entrevistas e o envio de devolutivas a todos os envolvidos.<br>
+<b>3</b> - O objetivo da aplicação é conectar coordenadores, professores e alunos, otimizando todo o fluxo de seleção e acompanhamento do programa.<br>
+<b>4</b> - O principal objetivo da aplicação é a eliminação do trabalho manual da equipe de coordenação, permitindo um gerenciamento de ponta a ponta que seja eficiente, rastreável e escalável.<br>
+<b>5</b> - A plataforma deve gerenciar as inscrições, a elegibilidade dos candidatos, a agenda de entrevistas e o registro de frequência dos monitores de forma integrada.<br>
 </p>
  
 ---
