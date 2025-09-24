@@ -1,0 +1,15 @@
+@startuml
+skinparam handwritten true
+title Inscrever-se no Programa
+
+frame "Inscrição no Programa" {
+  component "Nome"
+  component "Matrícula"
+  component "Curso"
+  component "Período"
+  component "Matéria"
+  component "CR Geral"
+  component "CR da Disciplina"
+  component "Enviar"
+}
+@enduml

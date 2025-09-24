@@ -1,0 +1,25 @@
+
+
+
+
+
+@startuml
+skinparam handwritten true
+title Preencher Formulário de Frequência
+
+frame "Formulário de Frequência" {
+  component "Nome do TA"
+  component "Matrícula do TA"
+  component "Unidade"
+  component "Curso"
+  component "Disciplina"
+  component "Data da Monitoria"
+  component "Modalidade (Presencial/Online)"
+  component "Participação de Alunos"
+  component "Tema"
+  component "Nome dos Alunos"
+  component "Matrícula dos Alunos"
+  component "Enviar"
+}
+@enduml
+

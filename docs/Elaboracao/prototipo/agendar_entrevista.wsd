@@ -1,0 +1,12 @@
+
+@startuml
+skinparam handwritten true
+title Agendar Entrevista
+
+frame "Agendar Entrevista" {
+  component "Selecionar Professor"
+  component "Disponibilidade"
+  component "Selecionar Candidatos"
+  component "Enviar Convite"
+}
+@enduml

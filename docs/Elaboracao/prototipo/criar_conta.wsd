@@ -1,0 +1,11 @@
+@startuml
+skinparam handwritten true
+title Criar Conta
+
+frame "Criar Conta" {
+  component "E-mail"
+  component "Senha"
+  component "Confirmar Senha"
+  component "Cadastrar"
+}
+@enduml
