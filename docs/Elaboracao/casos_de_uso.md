@@ -161,22 +161,26 @@ title: Diagrama de Casos de Uso
 	- Somente o TA pode registrar formulários de frequência
 
 ---
-
-### Gerar relatórios de acompanhamento
+### Enviar informativos por email
 
 - Atores:
 	- Organizador
+	- Professor
+
+- Descrição:
+	- Permite que informativos sejam enviados para candidatos ou TAs.
 
 - Pré-Condições:
-	- Deve haver pelo menos um formulário preenchido referente à monitoria escolhida
+	- Devem ter emails de alunos ou TAs cadastrados no sistema.
 
 - Fluxo Principal:
-	1. Organizador seleciona a disciplina, curso e unidade
-	2. Sistema realiza uma contabilização e entrega para o organizador
-	3. Organizador baixa em .xlsx (excel)
+	1. Organizador escolhe a categoria de usuários ou usuário específico
+	2. Organizador define o assunto e a mensagem
+	3. Sistema envia email
 
 - Fluxos Alternativos:
-	- (Nenhum)
+	- 1a. Se a categoria estiver vazia, o sistema exibe uma mensagem de erro e pede outra categoria
+	- 3a. Se o email de algum candidato for inválido, sistema apresenta nome do aluno e seus dados
 
 - Pós-condições:
-	- Organizador poderá avaliar o desempenho dos alunos participantes da monitoria
+	- Os emails serão enviados para os candidatos ou TAs
