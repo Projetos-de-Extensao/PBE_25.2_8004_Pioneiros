@@ -1,5 +1,5 @@
 %% Diagrama de Casos de Uso - Sistema de Monitoria Pioneiros
-%% filepath: c:\Users\Guilherme\Documents\Back End\PBE_25.2_8004_Pioneiros\docs\Elaboracao\casos_de_uso.mmd
+
 usecaseDiagram
     actor Usuario
     actor Candidato
@@ -19,4 +19,3 @@ usecaseDiagram
 
     Organizador -- (Enviar Informativos por Email)
     Professor -- (Enviar Informativos por Email)
-    
