@@ -1,0 +1,43 @@
+@startuml DiagramaDeClasses
+
+' Definição das classes
+class Usuario
+class Aluno
+class Professor
+class "CASA (organizador)" as CASA
+class Candidato
+class Monitor
+class "TA (Teaching Assistant)" as TA
+class Disciplina
+class Inscricao
+class Entrevista
+class SessaoMonitoria
+
+' Relacionamentos de Herança (Generalização)
+' Um Aluno, Professor e CASA são tipos de Usuário.
+Usuario <|-- Aluno
+Usuario <|-- Professor
+Usuario <|-- CASA
+
+' Candidato, Monitor e TA são papéis/especializações de um Aluno.
+Aluno <|-- Candidato
+Aluno <|-- Monitor
+Aluno <|-- TA
+
+' Relacionamentos de Associação
+' O fluxo de inscrição e entrevista
+Candidato --> Inscricao : "realiza"
+Inscricao --> Disciplina : "é para"
+Inscricao --> Entrevista : "pode gerar"
+Entrevista --> Candidato : "entrevista"
+Entrevista --> Professor : "conduzida por"
+Entrevista --> CASA : "agendada por"
+
+' O fluxo de monitoria e acompanhamento
+TA --> Disciplina : "atua na"
+TA --> SessaoMonitoria : "registra"
+SessaoMonitoria --> Disciplina : "é sobre"
+Professor --> TA : "supervisiona"
+CASA --> TA : "acompanha"
+
+@enduml

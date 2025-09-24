@@ -93,7 +93,10 @@ markdown_extensions:
       permalink: true
 
 plugins:
-  - search
+- plantuml:
+  - puml_url: https://www.plantuml.com/plantuml/ 
+  - puml_keyword: plantuml
+
 
 theme:
   name: material
