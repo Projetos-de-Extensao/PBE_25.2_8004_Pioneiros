@@ -59,7 +59,7 @@ Relatórios de Desempenho: Geração de relatórios básicos sobre a atividade d
 
 #### **3.5. Teste**
 
-- **Feedback dos Usuários**: O que os usuários acharam do protótipo.
+- **Feedback dos Usuários**: O que as organizadoras do CASA acharam do protótipo.
 - **Ajustes Realizados**: Mudanças feitas com base no feedback.
 - **Resultados Finais**: Descrição da solução final.
 
@@ -78,11 +78,3 @@ Relatórios de Desempenho: Geração de relatórios básicos sobre a atividade d
 - Fotos, gráficos, tabelas, transcrições de entrevistas, etc.
 
 ---
-
-## **Dicas para Criar o Documento**
-
-- Use uma linguagem clara e objetiva.
-- Inclua visualizações, como mapas de empatia, jornadas do usuário ou esboços de ideias.
-- Adapte o documento conforme o estágio do projeto (ex.: um documento inicial pode focar mais na pesquisa, enquanto um final pode detalhar a solução).
-
-Esse modelo é flexível e pode ser ajustado conforme as necessidades do seu projeto ou da sua equipe. O importante é que o documento reflita o processo colaborativo e iterativo do Design Thinking.
