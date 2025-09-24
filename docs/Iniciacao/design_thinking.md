@@ -48,33 +48,27 @@ Agendamento Inteligente de Entrevistas: Ferramenta para cruzar e sugerir horári
 Automação de Notificações: Sistema de e-mails e/ou WhatsApp para comunicação automática em cada etapa.
 Registro de Frequência Simplificado: Interface para monitores registrarem suas horas e a participação dos alunos.
 Relatórios de Desempenho: Geração de relatórios básicos sobre a atividade dos monitores e a frequência nas sessões.
-- **Seleção de Ideias**: Critérios utilizados para escolher as melhores ideias.
-- **Ideias Selecionadas**: Descrição das ideias que serão prototipadas.
+- **Seleção de Ideias**: Focamos em ideias que ajudassem o CASA e também os monitores e alunos interessados no processo.
+- **Ideias Selecionadas**: Cadastro de Candidatos, Registro de Frequência e Horas e Dashboard de Gestão.
 
 #### **3.4. Prototipagem**
 
-- **Descrição do Protótipo**: Como a ideia foi transformada em um protótipo (esboço, modelo físico, digital, etc.).
-- **Materiais Utilizados**: Recursos necessários para criar o protótipo.
-- **Testes Realizados**: Como o protótipo foi testado.
+- **Descrição do Protótipo**: Protótipos de baixa fidelidade para identificar de começo possíveis funcionalidades do sistema.
+- **Materiais Utilizados**: UML.
+- **Testes Realizados**: A definir.
 
 #### **3.5. Teste**
 
-- **Feedback dos Usuários**: O que as organizadoras do CASA acharam do protótipo.
-- **Ajustes Realizados**: Mudanças feitas com base no feedback.
-- **Resultados Finais**: Descrição da solução final.
+- **Feedback dos Usuários**: A definir.
+- **Ajustes Realizados**: A definir.
+- **Resultados Finais**: A definir.
 
 ---
 
 ### **4. Conclusão**
 
-- **Resultados Obtidos**: O que foi alcançado com o projeto.
-- **Próximos Passos**: O que ainda precisa ser feito ou implementado.
-- **Aprendizados**: Lições aprendidas durante o processo.
-
----
-
-### **5. Anexos**
-
-- Fotos, gráficos, tabelas, transcrições de entrevistas, etc.
+- **Resultados Obtidos**: A definir.
+- **Próximos Passos**: A definir.
+- **Aprendizados**: A definir.
 
 ---
