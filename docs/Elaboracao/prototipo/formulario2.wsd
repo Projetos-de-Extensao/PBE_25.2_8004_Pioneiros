@@ -1,6 +1,6 @@
 @startsalt
 {+
-  {^"Inscrição"}
+  {^"Formulario"}
   "Nome Completo:            "
   "Matricula:                "
   ^Curso^
