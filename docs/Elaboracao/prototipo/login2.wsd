@@ -2,6 +2,7 @@
 {+
   "Matricula:         "
   "Senha:             "
+  Matricula ou senha incorreta
   [Entrar] | [Esqueci minha senha]
 }
 @endsalt

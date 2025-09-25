@@ -1,4 +1,3 @@
-
 @startsalt
 {+
   {^"Formulario"}
@@ -8,10 +7,7 @@
   "Disciplina:               "
   "Data da monitoria:        "
   ()Monitoria Online
-  "Alunos monitorados: 1     "
-  "Nome Completo:            "
-  "Matricula:                "
-  "Tema:                     "
+  "Alunos monitorados: 0     "
   {
     [ Enviar ] | [ Cancelar ]
   }

@@ -1,12 +1,12 @@
-@startuml
-skinparam handwritten true
-title Enviar Informativos por Email
-
-frame "Enviar Informativo" {
-  component "Selecionar Categoria"
-  component "Selecionar Usuário"
-  component "Assunto"
-  component "Mensagem"
-  component "Enviar"
+@startsalt
+{+
+  {^"Enviar Informativo"}
+  "Selecionar Categoria:    "
+  "Selecionar Usuário:      "
+  "Assunto:                 "
+  "Mensagem:                "
+  {
+    [ Enviar ] | [ Cancelar ]
+  }
 }
-@enduml
+@endsalt
