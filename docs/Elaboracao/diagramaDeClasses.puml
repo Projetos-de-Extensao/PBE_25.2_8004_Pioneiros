@@ -1,4 +1,4 @@
-@startuml DiagramaDeClasses
+@startuml
 
 ' Definição das classes
 class Usuario
@@ -24,20 +24,20 @@ Aluno <|-- Candidato
 Aluno <|-- Monitor
 Aluno <|-- TA
 
-' Relacionamentos de Associação
+' Relacionamentos de Associação com Multiplicidade
 ' O fluxo de inscrição e entrevista
-Candidato --> Inscricao : "realiza"
-Inscricao --> Disciplina : "é para"
-Inscricao --> Entrevista : "pode gerar"
-Entrevista --> Candidato : "entrevista"
-Entrevista --> Professor : "conduzida por"
-Entrevista --> CASA : "agendada por"
+Candidato "1" --> "1..*" Inscricao : realiza
+Inscricao "*" --> "1" Disciplina : é para
+Inscricao "1" --> "0..1" Entrevista : pode gerar
+Entrevista "1" --> "1..*" Candidato : entrevista
+Entrevista "1" --> "1..*" Professor : conduzida por
+CASA "1" --> "0..*" Entrevista : agendada por
 
 ' O fluxo de monitoria e acompanhamento
-TA --> Disciplina : "atua na"
-TA --> SessaoMonitoria : "registra"
-SessaoMonitoria --> Disciplina : "é sobre"
-Professor --> TA : "supervisiona"
-CASA --> TA : "acompanha"
+TA "*" --> "*" Disciplina : atua na
+TA "1" --> "0..*" SessaoMonitoria : registra
+SessaoMonitoria "*" --> "1" Disciplina : é sobre
+Professor "1" --> "0..*" TA : supervisiona
+CASA "1" --> "0..*" TA : acompanha
 
 @enduml
