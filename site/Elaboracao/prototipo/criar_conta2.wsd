@@ -1,0 +1,10 @@
+@startsalt
+{+
+  "Email:             "
+  "Matricula:         "
+  "Senha:             "
+  "Confirmar senha    "
+  Senha incorreta
+  [Cadastrar] | [Cancelar]
+}
+@endsalt

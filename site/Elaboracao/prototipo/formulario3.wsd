@@ -1,0 +1,15 @@
+@startsalt
+{+
+  {^"Formulario"}
+  "Nome Completo:            "
+  "Matricula:                "
+  ^Curso^
+  "Disciplina:               "
+  "Data da monitoria:        "
+  ()Monitoria Online
+  "Alunos monitorados: 0     "
+  {
+    [ Enviar ] | [ Cancelar ]
+  }
+}
+@endsalt
