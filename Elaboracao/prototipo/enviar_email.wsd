@@ -1,0 +1,12 @@
+@startsalt
+{+
+  {^"Enviar Informativo"}
+  "Selecionar Categoria:    "
+  "Selecionar Usuário:      "
+  "Assunto:                 "
+  "Mensagem:                "
+  {
+    [ Enviar ] | [ Cancelar ]
+  }
+}
+@endsalt

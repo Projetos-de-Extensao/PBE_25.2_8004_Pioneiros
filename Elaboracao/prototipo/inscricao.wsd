@@ -1,0 +1,19 @@
+@startsalt
+{+
+  {^"Inscrição"}
+  "Nome Completo:            "
+  "Email:                    "
+  "Matricula:                "
+  ^Periodo^
+  ^Curso^
+  "Disciplina:               "
+  "CR Geral:                 "
+  "CR da disciplina:         "
+  
+
+  [X] "Eu li e aceito os termos"
+  {
+    [ Inscrever ] | [ Cancelar ]
+  }
+}
+@endsalt
