@@ -1,0 +1,22 @@
+@startsalt
+{+
+  {^"Inscrição"}
+  "Nome Completo:            "
+  "Matricula:                "
+  ^Curso^
+  "Disciplina:               "
+  "Data da monitoria:        "
+  (X)Monitoria Online
+  "Link da Monitoria         "
+  "Alunos monitorados: 1     "
+  "Nome Completo:            "
+  "Matricula:                "
+  "Tema:                     "
+
+   Insira uma nova data
+
+  {
+    [ Enviar ] | [ Cancelar ]
+  }
+}
+@endsalt
