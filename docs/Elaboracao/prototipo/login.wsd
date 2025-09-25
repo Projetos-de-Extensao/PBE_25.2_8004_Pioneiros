@@ -1,7 +1,7 @@
 @startsalt
 {+
-  "^Matricula:         "
-  "^Senha:             "
+  "Matricula:         "
+  "Senha:             "
   [Entrar] | [Esqueci minha senha]
 }
 @endsalt
