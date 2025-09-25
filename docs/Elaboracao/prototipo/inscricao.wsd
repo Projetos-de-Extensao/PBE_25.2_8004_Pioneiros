@@ -1,15 +1,19 @@
-@startuml
-skinparam handwritten true
-title Inscrever-se no Programa
+@startsalt
+{+
+  {^"Inscrição"}
+  "Nome Completo:            "
+  "Email:                    "
+  "Matricula:                "
+  ^Periodo^
+  ^Curso^
+  "Disciplina:               "
+  "CR Geral:                 "
+  "CR da disciplina:         "
+  
 
-frame "Inscrição no Programa" {
-  component "Nome"
-  component "Matrícula"
-  component "Curso"
-  component "Período"
-  component "Matéria"
-  component "CR Geral"
-  component "CR da Disciplina"
-  component "Enviar"
+  [X] "Eu li e aceito os termos"
+  {
+    [ Inscrever ] | [ Cancelar ]
+  }
 }
-@enduml
+@endsalt
