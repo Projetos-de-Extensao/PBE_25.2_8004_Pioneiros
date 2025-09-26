@@ -1,9 +1,0 @@
-@startsalt
-{+
-  "Email:             "
-  "Matricula:         "
-  "Senha:             "
-  "Confirmar senha    "
-  [Cadastrar] | [Cancelar]
-}
-@endsalt
