@@ -1,18 +1,11 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PBE_25.2_8003
+repo_url: https://github.com/jonh-carvalho/PBE_25.2_8004_Pioneiros
 site_author: Jonh Carvalho
-site_name: PBE_25.2_8003
+site_name: PBE_25.2_8004_Pioneiros
 copyright: Copyright ©️ 2025, Jonh Carvalho
 
 nav: 
   - Home: index.md
-  - Disciplina:
-      - Aulas: Disciplina/aulas.md
-      - Ambiente: Disciplina/ambiente.md
-      - Github: Disciplina/github.md
-      - Mkdocs: Disciplina/mkdocs.md
-      - CodeSpace: Disciplina/codespace.md
-      - Avaliações: Disciplina/avaliacoes.md
   - Iniciação: 
       - Index: Iniciacao/index.md
       - Pesquisa: Iniciacao/pesquisa.md
@@ -36,10 +29,6 @@ nav:
   - Transição:
       - Index: Transicao/index.md
 
-  - Bibliografia: Disciplina/bibliografia.md
-
-extra_css:
-  - css/extra.css
 
 markdown_extensions:
   # Tooltips
@@ -62,13 +51,13 @@ markdown_extensions:
   - pymdownx.details
   # Icons & Emojis
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji ''
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg ''
+        emoji_index: !!python/name:material.extensions.emoji.twemoji ''
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg ''
   # Code Blocks
   - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
   # Code Blocks
   - pymdownx.inlinehilite
   # Formatting
@@ -81,10 +70,10 @@ markdown_extensions:
   - pymdownx.superfences
   # Content Tabs
   - pymdownx.tabbed:
-      alternate_style: true
+        alternate_style: true
   # Lists
   - pymdownx.tasklist:
-      custom_checkbox: true
+        custom_checkbox: true
   # Formatting
   - pymdownx.tilde
   # Data Tables
@@ -93,9 +82,10 @@ markdown_extensions:
       permalink: true
 
 plugins:
-# - plantuml:
-#   - puml_url: https://www.plantuml.com/plantuml/ 
-#   - puml_keyword: plantuml
+    - search
+    # - plantuml:
+    #   - puml_url: https://www.plantuml.com/plantuml/ 
+    #   - puml_keyword: plantuml
 
 
 theme:
