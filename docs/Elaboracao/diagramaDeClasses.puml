@@ -2,14 +2,37 @@
 
 ' Definição das classes
 class Usuario
-class Aluno
-class Professor
-class "CASA (organizador)" as CASA
-class Candidato
+class Aluno {
+    - matricula: String
+    - nome: String  
+
+    + seCandidatar(): void
+}
+class Professor {
+    - nome: String
+    - email: String
+
+    + aprovarCandidato(c: Candidato): void
+    + verRelatorioAcompanhamento(): void
+
+}
+class "CASA (organizador)" as CASA {
+    
+    + enviarInformativosEmail(): void
+}
+class Candidato {
+    - iddisc: String
+    - status: String
+}
 class Monitor
-class "TA (Teaching Assistant)" as TA
+class "TA (Teaching Assistant)" as TA {
+
+    + preencherFormularioFrequencias(): void
+}
 class Disciplina
-class Inscricao
+class Inscricao {
+    - 
+}
 class Entrevista
 class SessaoMonitoria
 
