@@ -1,10 +1,11 @@
 @startuml
 
 ' Definição das classes
-class Usuario
+class User 
 class Aluno {
     - matricula: String
-    - nome: String  
+    - nome: String
+    - email
 
     + seCandidatar(): void
 }
@@ -36,6 +37,7 @@ class "Teaching Assistant" as TA {
 class Disciplina {
     - nome: String
     - monitor: Teaching Assistant
+    - area: String
 }
 class Inscricao {
     - disciplina: Disciplina
@@ -48,9 +50,9 @@ class SessaoMonitoria
 
 ' Relacionamentos de Herança (Generalização)
 ' Um Aluno, Professor e CASA são tipos de Usuário.
-Usuario <|-down- Aluno
-Usuario <|-down- Professor
-Usuario <|-down- CASA
+User <|-down- Aluno
+User <|-down- Professor
+User <|-down- CASA
 
 ' Candidato, Monitor e TA são papéis/especializações de um Aluno.
 Aluno <|-down- Candidato
