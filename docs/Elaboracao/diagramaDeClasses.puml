@@ -17,35 +17,45 @@ class Professor {
 
 }
 class "CASA (organizador)" as CASA {
+    - nome: String
+    - email: String
+    - senha: String
     
     + enviarInformativosEmail(): void
 }
 class Candidato {
-    - iddisc: String
     - status: String
 }
-class Monitor
-class "TA (Teaching Assistant)" as TA {
-
+class Monitorado {
+    + preencherRelatorioExperiencia(): void
+}
+class "Teaching Assistant" as TA {
+    - aluno: Aluno
     + preencherFormularioFrequencias(): void
 }
-class Disciplina
-class Inscricao {
-    - 
+class Disciplina {
+    - nome: String
+    - monitor: Teaching Assistant
 }
-class Entrevista
+class Inscricao {
+    - disciplina: Disciplina
+    - alunos: Candidato[]
+}
+class Entrevista {
+    - aluno: Candidato
+}
 class SessaoMonitoria
 
 ' Relacionamentos de Herança (Generalização)
 ' Um Aluno, Professor e CASA são tipos de Usuário.
-Usuario <|-- Aluno
-Usuario <|-- Professor
-Usuario <|-- CASA
+Usuario <|-down- Aluno
+Usuario <|-down- Professor
+Usuario <|-down- CASA
 
 ' Candidato, Monitor e TA são papéis/especializações de um Aluno.
-Aluno <|-- Candidato
-Aluno <|-- Monitor
-Aluno <|-- TA
+Aluno <|-down- Candidato
+Aluno <|-down- Monitorado
+Aluno <|-down- TA
 
 ' Relacionamentos de Associação com Multiplicidade
 ' O fluxo de inscrição e entrevista
