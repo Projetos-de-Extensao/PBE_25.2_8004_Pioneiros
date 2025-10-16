@@ -152,3 +152,6 @@ title: Diagrama de Casos de Uso
 
 - Pós-condições:
 	- Os emails serão enviados para os candidatos ou TAs
+
+### Diagrama de Caso de uso
+![Diagrama de UC](Imagens/DiagramaUC.png)
