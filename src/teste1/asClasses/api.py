@@ -2,7 +2,7 @@ from rest_framework import viewsets, permissions
 from rest_framework import viewsets, generics
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from . import models, serializers
+from ..teste1 import models, serializers
 
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = models.Aluno.objects.all()
