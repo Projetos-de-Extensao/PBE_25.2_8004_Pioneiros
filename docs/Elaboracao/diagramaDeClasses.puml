@@ -5,35 +5,40 @@ class User
 class Aluno {
     - matricula: String
     - nome: String
-    - email
+    - email: String
 
     + seCandidatar(): void
 }
 class Professor {
     - nome: String
     - email: String
+    - senha: String
 
     + aprovarCandidato(c: Candidato): void
     + verRelatorioAcompanhamento(): void
 
 }
-class "CASA (organizador)" as CASA {
-    - nome: String
+class CASA {
     - email: String
-    - senha: String
     
     + enviarInformativosEmail(): void
 }
+
 class Candidato {
     - status: String
 }
-class Monitorado {
+class AlunoMonitorado {
+    - aulasParticipadas: int
+
     + preencherRelatorioExperiencia(): void
 }
-class "Teaching Assistant" as TA {
-    - aluno: Aluno
+
+class TeachingAssistant {
+    - disciplinaMonitora: Disciplina
+
     + preencherFormularioFrequencias(): void
 }
+
 class Disciplina {
     - nome: String
     - monitor: Teaching Assistant
@@ -46,7 +51,12 @@ class Inscricao {
 class Entrevista {
     - aluno: Candidato
 }
-class SessaoMonitoria
+class SessaoMonitoria {
+    - data: LocalDate
+    - monitorados: AlunoMonitorado[]
+    - qtdAlunos: int
+
+}
 
 ' Relacionamentos de Herança (Generalização)
 ' Um Aluno, Professor e CASA são tipos de Usuário.
@@ -57,7 +67,7 @@ User <|-down- CASA
 ' Candidato, Monitor e TA são papéis/especializações de um Aluno.
 Aluno <|-down- Candidato
 Aluno <|-down- Monitorado
-Aluno <|-down- TA
+Aluno <|-down- TeachingAssistant
 
 ' Relacionamentos de Associação com Multiplicidade
 ' O fluxo de inscrição e entrevista
@@ -69,10 +79,10 @@ Entrevista "1" --> "1..*" Professor : conduzida por
 CASA "1" --> "0..*" Entrevista : agendada por
 
 ' O fluxo de monitoria e acompanhamento
-TA "*" --> "*" Disciplina : atua na
-TA "1" --> "0..*" SessaoMonitoria : registra
+TeachingAssistant "*" --> "*" Disciplina : atua na
+TeachingAssistant "1" --> "0..*" SessaoMonitoria : registra
 SessaoMonitoria "*" --> "1" Disciplina : é sobre
-Professor "1" --> "0..*" TA : supervisiona
-CASA "1" --> "0..*" TA : acompanha
+Professor "1" --> "0..*" TeachingAssistant : supervisiona
+CASA "1" --> "0..*" TeachingAssistant : acompanha
 
 @enduml
