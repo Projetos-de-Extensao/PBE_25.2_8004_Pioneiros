@@ -1,7 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
 from asClasses import api
-from ..teste1 import views
 
 router = routers.DefaultRouter()
 router.register(r'alunos', api.AlunoViewSet)
