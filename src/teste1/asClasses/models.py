@@ -50,27 +50,20 @@ class AlunoMonitorado(Aluno):
 class Professor(User):
     senha = models.CharField(max_length=128)
 
-    def aprovar_candidato(self, candidato: Candidato):
-        candidato.status = 'aprovado'
-        candidato.save()
-        return candidato
 
-    def ver_relatorio_acompanhamento(self):
-        # placeholder: retornar dados de acompanhamento (implementar consulta real)
-        return SessaoMonitoria.objects.filter(disciplina__monitor__supervisor=self)
 
 class CASA(User):
+    pass
     # email herdado de User
 
-    def enviar_informativos_email(self, assunto, corpo, lista_emails):
-        # placeholder para integração com serviço de email
-        # Real implementation should use Django Email or external provider
-        return {"assunto": assunto, "corpo": corpo, "destinatarios": lista_emails}
+    # def enviar_informativos_email(self, assunto, corpo, lista_emails):
+    #     # placeholder para integração com serviço de email
+    #     return {"assunto": assunto, "corpo": corpo, "destinatarios": lista_emails}
 
-    def agendar_entrevista(self, entrevista):
-        entrevista.agendada_por = self
-        entrevista.save()
-        return entrevista
+    # def agendar_entrevista(self, entrevista):
+    #     entrevista.agendada_por = self
+    #     entrevista.save()
+    #     return entrevista
 
 # Disciplina e relacionamentos
 class Disciplina(models.Model):
@@ -86,26 +79,22 @@ class Disciplina(models.Model):
 
 # TeachingAssistant é especialização de Aluno
 class TeachingAssistant(Aluno):
-    # relacionamento many-to-many com Disciplinas em que atua
     disciplinas = models.ManyToManyField(Disciplina, related_name='teaching_assistants', blank=True)
-    # supervisor (Professor) 0..*
     supervisor = models.ForeignKey(Professor, null=True, blank=True, on_delete=models.SET_NULL, related_name='supervisionados')
-    # acompanhada por CASA (0..*)
     acompanhada_por = models.ForeignKey(CASA, null=True, blank=True, on_delete=models.SET_NULL, related_name='tas_acompanhadas')
 
-    def preencher_formulario_frequencias(self, sessao: 'SessaoMonitoria', frequencias: dict):
-        """
-        Placeholder que registra frequências para uma sessão.
-        'frequencias' pode ser um dict {aluno_id: presença_bool} — adaptar conforme necessidade.
-        """
-        # implementar lógica de registro das frequências
-        return {"sessao": sessao.id if sessao else None, "frequencias_recebidas": frequencias}
+    # def preencher_formulario_frequencias(self, sessao: 'SessaoMonitoria', frequencias: dict):
+    #     """
+    #     Placeholder que registra frequências para uma sessão.
+    #     'frequencias' pode ser um dict {aluno_id: presença_bool} — adaptar conforme necessidade.
+    #     """
+    #     # implementar lógica de registro das frequências
+    #     return {"sessao": sessao.id if sessao else None, "frequencias_recebidas": frequencias}
 
 # Inscrição - um relacionamento entre candidatos e disciplina
 class Inscricao(models.Model):
     disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE, related_name='inscricoes')
     alunos = models.ManyToManyField(Candidato, related_name='inscricoes', blank=True)
-    # 0..1 entrevista gerada a partir da inscrição
     entrevista = models.OneToOneField('Entrevista', null=True, blank=True, on_delete=models.SET_NULL, related_name='inscricao')
 
     def __str__(self):
