@@ -1,17 +1,26 @@
 from django.db import models
 
 # Create your models here.
+
+class Disciplina(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+
 class Vaga(models.Model):
-    disciplina = models.CharField(max_length=100)
-    curso = models.CharField(max_length=100)
+    disciplina = models.ForeignKey(Disciplina, on_delete=models.PROTECT)
     unidade = models.CharField(max_length=100)
     periodo = models.CharField(max_length=100)
     
 
     def __str__(self):
-        return self.disciplina
+        return self.disciplina.nome
     
-    
+
+
 # class Aluno
 
 # class Professor(models.Model):

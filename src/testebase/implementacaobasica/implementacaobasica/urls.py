@@ -8,5 +8,5 @@ urlpatterns = [
 
 ]
 
-# usuario: admin3
-# senha: 123456
+# usuario: admin
+# senha: 123
