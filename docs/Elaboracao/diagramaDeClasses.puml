@@ -27,11 +27,11 @@ class CASA {
 class Candidato {
     - status: String
 }
-class AlunoMonitorado {
-    - aulasParticipadas: int
+' class AlunoMonitorado {
+'     - aulasParticipadas: int
 
-    + preencherRelatorioExperiencia(): void
-}
+'     + preencherRelatorioExperiencia(): void
+' }
 
 class TeachingAssistant {
     - disciplinaMonitora: Disciplina
@@ -42,21 +42,31 @@ class TeachingAssistant {
 class Disciplina {
     - nome: String
     - monitor: Teaching Assistant
-    - area: String
+    - curso: String
+    - professor: String
 }
+
 class Inscricao {
     - disciplina: Disciplina
     - alunos: Candidato[]
 }
-class Entrevista {
-    - aluno: Candidato
-}
-class SessaoMonitoria {
-    - data: LocalDate
-    - monitorados: AlunoMonitorado[]
-    - qtdAlunos: int
 
+class Vaga {
+    - disciplina: Disciplina
+    - unidade: String
+    - periodo: String
+    - horario: String
 }
+
+' class Entrevista {
+'     - aluno: Candidato
+' }
+
+' class SessaoMonitoria {
+'     - data: LocalDate
+'     - monitorados: AlunoMonitorado[]
+'     - qtdAlunos: int
+' }
 
 ' Relacionamentos de Herança (Generalização)
 ' Um Aluno, Professor e CASA são tipos de Usuário.
@@ -64,25 +74,28 @@ User <|-down- Aluno
 User <|-down- Professor
 User <|-down- CASA
 
-' Candidato, Monitor e TA são papéis/especializações de um Aluno.
-Aluno <|-down- Candidato
-Aluno <|-down- Monitorado
-Aluno <|-down- TeachingAssistant
 
-' Relacionamentos de Associação com Multiplicidade
-' O fluxo de inscrição e entrevista
+Aluno <|-down- Candidato
+' Aluno <|-down- Monitorado
+Aluno <|-down- TeachingAssistant
+Candidato <-[hidden]left- TeachingAssistant
+
+' Aluno <-[hidden]left- Professor
+' Aluno <-[hidden]left- CASA
+
+Vaga "1" --> "1" Disciplina
 Candidato "1" --> "1..*" Inscricao : realiza
 Inscricao "*" --> "1" Disciplina : é para
-Inscricao "1" --> "0..1" Entrevista : pode gerar
-Entrevista "1" --> "1..*" Candidato : entrevista
-Entrevista "1" --> "1..*" Professor : conduzida por
-CASA "1" --> "0..*" Entrevista : agendada por
+' Inscricao "1" --> "0..1" Entrevista : pode gerar
+' Entrevista "1" --> "1..*" Candidato : entrevista
+' Entrevista "1" --> "1..*" Professor : conduzida por
+' CASA "1" --> "0..*" Entrevista : agendada por
 
 ' O fluxo de monitoria e acompanhamento
-TeachingAssistant "*" --> "*" Disciplina : atua na
-TeachingAssistant "1" --> "0..*" SessaoMonitoria : registra
-SessaoMonitoria "*" --> "1" Disciplina : é sobre
-Professor "1" --> "0..*" TeachingAssistant : supervisiona
-CASA "1" --> "0..*" TeachingAssistant : acompanha
+TeachingAssistant "*" --> "*  " Disciplina : atua na
+' TeachingAssistant "1" --> "0..*" SessaoMonitoria : registra
+' SessaoMonitoria "*" --> "1" Disciplina : é sobre
+' Professor "1" --> "0..*" TeachingAssistant : supervisiona
+' CASA "1" --> "0..*" TeachingAssistant : acompanha
 
 @enduml

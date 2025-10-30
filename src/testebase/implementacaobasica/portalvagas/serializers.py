@@ -1,9 +1,9 @@
-from .models import Vagas
+from .models import Vaga
 from rest_framework import serializers
 
 
-class VagasSerializer(serializers.ModelSerializer):
+class VagaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Vagas
-        fields = ['id', 'disciplina', 'curso']
+        model = Vaga
+        fields = ['id', 'disciplina', 'curso', 'unidade', 'periodo']
         read_only_fields = ['id']
