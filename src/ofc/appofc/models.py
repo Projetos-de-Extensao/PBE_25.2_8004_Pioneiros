@@ -29,3 +29,19 @@ class Aluno(models.Model):
 
     def __str__(self):
         return f'{self.matricula} - {self.user.get_full_name()}'
+
+class Inscricao(models.Model):
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    vaga = models.ForeignKey(Vaga, on_delete=models.CASCADE)
+    arquivo_historico = models.FileField(upload_to='historicos/')
+    status_choices = [
+        ('PENDENTE', 'Pendente'),
+        ('APROVADO', 'Aprovado'),
+        ('REJEITADO', 'Rejeitado'),
+    ]
+    status = models.CharField(max_length=10, choices=status_choices, default='PENDENTE')
+    class Meta:
+        unique_together = ('vaga', 'aluno')
+    
+    def __str__(self):
+        return f'{self.aluno} - {self.vaga}'
