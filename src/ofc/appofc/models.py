@@ -21,3 +21,11 @@ class Vaga(models.Model):
     
     class Meta:
         unique_together = ('disciplina', 'unidade')
+        
+class Aluno(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='aluno')
+    matricula = models.CharField(max_length=20, unique=True, verbose_name='Matrícula')
+    curso = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.matricula} - {self.user.get_full_name()}'
