@@ -45,11 +45,11 @@ class InscricaoCreateSerializer(serializers.ModelSerializer):
         )
 
         try:
-            caminho_pdf = inscricao.arquivo_historico.path 
+            url_pdf = inscricao.arquivo_historico.path 
             
-            analisador = AnalisadorHistorico(Vaga=vaga)
+            analisador = AnalisadorHistorico(vaga)
             
-            status_final = analisador.analisar_e_decidir(caminho_pdf)
+            status_final = analisador.analisar_e_decidir(url_pdf)
             
             if status_final == "APROVADO":
                 inscricao.status = "APROVADO"

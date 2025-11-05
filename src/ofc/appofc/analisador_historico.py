@@ -1,10 +1,11 @@
 import pdfplumber
+from .models import Vaga
 
 class AnalisadorHistorico:
 
-    def __init__(self, Vaga):
+    def __init__(self, vaga_recebida: Vaga):
 
-        self.vaga_alvo = Vaga
+        self.vaga_alvo = vaga_recebida.disciplina.nome
 
         # Estes são os "mapas" que definem o que procurar
         self.config = {
@@ -32,9 +33,9 @@ class AnalisadorHistorico:
     # --- Leitura do PDF ---
 
     @staticmethod
-    def ler_tabelas(caminho_pdf):
+    def ler_tabelas(url_pdf):
         try:
-            with pdfplumber.open(caminho_pdf) as pdf:
+            with pdfplumber.open(url_pdf) as pdf:
                 tabelas = []
                 for page in pdf.pages:
                     tabelas_pagina = page.extract_tables()
@@ -42,7 +43,7 @@ class AnalisadorHistorico:
                         tabelas.extend(tabelas_pagina)
                     
             if not tabelas:
-                print(f"AVISO: Nenhuma tabela encontrada no PDF: {caminho_pdf}")
+                print(f"AVISO: Nenhuma tabela encontrada no PDF: {url_pdf}")
                 return []
                     
             return tabelas
@@ -82,7 +83,7 @@ class AnalisadorHistorico:
             else:
                 mapa["valor"] = elemento_tratado
         else:
-            return;
+            return
 
     def extrair_cr_geral(self):
         cr_periodo_soma = self.config["cr_periodo_soma"]
@@ -123,10 +124,10 @@ class AnalisadorHistorico:
         )
     
 
-    def analisar_e_decidir(self, caminho_pdf: str) -> str:
-        print(f"Iniciando análise do PDF: {caminho_pdf}")
+    def analisar_e_decidir(self, url_pdf: str) -> str:
+        print(f"Iniciando análise do PDF: {url_pdf}")
         
-        tabelas = self.ler_tabelas(caminho_pdf)
+        tabelas = self.ler_tabelas(url_pdf)
         if not tabelas:
             print("Análise falhou: PDF sem tabelas ou ilegível.")
             return "PENDENTE" 
