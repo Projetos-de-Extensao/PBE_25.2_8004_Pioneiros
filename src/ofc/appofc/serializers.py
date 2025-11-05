@@ -1,4 +1,5 @@
 from .models import Vaga, Disciplina, Aluno, Inscricao
+from .analisador_historico import AnalisadorHistorico
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.db import transaction
@@ -42,6 +43,23 @@ class InscricaoCreateSerializer(serializers.ModelSerializer):
             aluno=aluno,
             **validated_data
         )
+
+        try:
+            caminho_pdf = inscricao.arquivo_historico.path 
+            
+            analisador = AnalisadorHistorico(Vaga=vaga)
+            
+            status_final = analisador.analisar_e_decidir(caminho_pdf)
+            
+            if status_final == "APROVADO":
+                inscricao.status = "APROVADO"
+                inscricao.save()
+                
+        except Exception as e:
+            print(f"ERRO no analisador: {e}.")
+            pass 
+
+
         return inscricao
 
 # pra get
