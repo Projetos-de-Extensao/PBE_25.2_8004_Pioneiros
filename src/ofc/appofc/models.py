@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Disciplina(models.Model):
     nome = models.CharField(unique=True, max_length=100)
 
+
     def __str__(self):
         return self.nome
 

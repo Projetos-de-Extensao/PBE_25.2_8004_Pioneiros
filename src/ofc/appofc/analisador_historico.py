@@ -5,7 +5,7 @@ class AnalisadorHistorico:
 
     def __init__(self, vaga_recebida: Vaga):
 
-        self.vaga_alvo = vaga_recebida.disciplina.nome
+        self.vaga_alvo = vaga_recebida.disciplina.nome.upper()
 
         # Estes são os "mapas" que definem o que procurar
         self.config = {
