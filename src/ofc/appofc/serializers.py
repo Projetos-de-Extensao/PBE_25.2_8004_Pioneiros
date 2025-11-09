@@ -3,13 +3,19 @@ from .analisador_historico import AnalisadorHistorico
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.db import transaction
+from drf_spectacular.utils import extend_schema_field
 
+
+@extend_schema_field(serializers.CharField)
+def get_creator_name(self, obj):
+    """Retorna o nome do criador do conteúdo"""
+    return obj.creator.username
 
 
 class DisciplinaSerializar(serializers.ModelSerializer):
     class Meta:
         model = Disciplina
-        fields = ['id', 'nome']
+        fields = ['id', 'nome','curso']
         read_only_fields = ['id']
 
 class VagaSerializer(serializers.ModelSerializer):

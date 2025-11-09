@@ -7,7 +7,6 @@ class AnalisadorHistorico:
 
         self.vaga_alvo = vaga_recebida.disciplina.nome.upper()
 
-        # Estes são os "mapas" que definem o que procurar
         self.config = {
             "horas_cursadas": {
                 "keyword": "Carga Horária Total",
@@ -30,8 +29,6 @@ class AnalisadorHistorico:
             "cr_geral": {"valor": 0.0, "valor_min": 7.0},
         }
 
-    # --- Leitura do PDF ---
-
     @staticmethod
     def ler_tabelas(url_pdf):
         try:
@@ -50,8 +47,6 @@ class AnalisadorHistorico:
         except Exception as e:
             print(f"ERRO ao ler PDF: {e}")
             return []
-
-    # --- Extração dos dados ---
 
     @staticmethod
     def tratar_valor(elemento):
@@ -91,7 +86,6 @@ class AnalisadorHistorico:
 
         cr_geral["valor"] = cr_periodo_soma["valor"] / cr_periodo_soma["count"]
 
-    # Função principal
     def extrair_dados_tabelas(self, tabelas):
         for tabela in tabelas:
             for linha in tabela:
@@ -99,8 +93,6 @@ class AnalisadorHistorico:
                 self.extrair_dados_linha(linha, self.config["cr_especifico"])
                 self.extrair_dados_linha(linha, self.config["cr_periodo_soma"], True)
         self.extrair_cr_geral()
-
-    # --- Análise dos dados ---
 
     @staticmethod
     def valor_suficiente(mapa):

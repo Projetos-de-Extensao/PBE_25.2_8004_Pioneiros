@@ -24,16 +24,33 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'pdfplumber',
     'corsheaders',
+    'drf_spectacular', 
     'appofc',
 ]
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Streaming Platform API',
+    'DESCRIPTION': 'API completa para plataforma de streaming de áudio e vídeo',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SORT_OPERATIONS': False,
+    'TAGS': [
+        {'name': 'Authentication', 'description': 'Endpoints de autenticação'},
+        {'name': 'Content', 'description': 'Gerenciamento de conteúdo'},
+        {'name': 'Playlists', 'description': 'Gerenciamento de playlists'},
+        {'name': 'Users', 'description': 'Gerenciamento de usuários'},
     ],
 }
 
