@@ -1,7 +1,7 @@
 from rest_framework import viewsets, generics, mixins, status
 from rest_framework.response import Response
-from .models import Vaga, Disciplina, Inscricao
-from .serializers import VagaSerializer, DisciplinaSerializar, InscricaoSerializer, CadastroAlunoSerializer, InscricaoCreateSerializer
+from .models import Vaga, Disciplina, Inscricao, Curso
+from .serializers import VagaSerializer, DisciplinaSerializar, CursoSerializer, InscricaoSerializer, CadastroAlunoSerializer, InscricaoCreateSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from drf_spectacular.utils import extend_schema, extend_schema_view
 
@@ -28,13 +28,19 @@ from drf_spectacular.utils import extend_schema, extend_schema_view
     ),
 )
 
-class DisciplinaViewSet(viewsets.ModelViewSet):
+class DisciplinaViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Disciplina.objects.all()
     serializer_class = DisciplinaSerializar
     permission_classes = [IsAuthenticated]
 
+class CursoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Curso.objects.all()
+    serializer_class = CursoSerializer
+    permission_classes = [AllowAny]
+
 class VagaViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = VagaSerializer
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
         queryset = Vaga.objects.all()
@@ -42,14 +48,12 @@ class VagaViewSet(viewsets.ReadOnlyModelViewSet):
         curso = self.request.query_params.get('curso')
 
         if curso:
-            queryset = queryset.filter(disciplina__curso__icontains=curso)
+                    queryset = queryset.filter(disciplina__curso__slug=curso)
         
-        return queryset.order_by('disciplina__nome')
+        return queryset.distinct().order_by('disciplina__nome')
     
     
-
 class InscricaoViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.GenericViewSet):
-    
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
@@ -58,7 +62,6 @@ class InscricaoViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, mixins.Re
         return Inscricao.objects.none()
 
     def get_serializer_class(self):
-
         if self.action == 'create':
             return InscricaoCreateSerializer 
         

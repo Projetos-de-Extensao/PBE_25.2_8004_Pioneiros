@@ -131,5 +131,5 @@ class AnalisadorHistorico:
             print("Resultado: APROVADO (automaticamente)")
             return "APROVADO"
         else:
-            print("Resultado: PENDENTE (critérios não atingidos)")
-            return "PENDENTE"
+            print("Resultado: REJEITADO (critérios não atingidos)")
+            return "REJEITADO"

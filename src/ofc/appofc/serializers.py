@@ -1,4 +1,4 @@
-from .models import Vaga, Disciplina, Aluno, Inscricao
+from .models import Vaga, Disciplina, Aluno, Inscricao, Curso
 from .analisador_historico import AnalisadorHistorico
 from rest_framework import serializers
 from django.contrib.auth.models import User
@@ -8,14 +8,18 @@ from drf_spectacular.utils import extend_schema_field
 
 @extend_schema_field(serializers.CharField)
 def get_creator_name(self, obj):
-    """Retorna o nome do criador do conteúdo"""
     return obj.creator.username
 
+class CursoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Curso
+        fields = ('id', 'nome', 'slug')
 
 class DisciplinaSerializar(serializers.ModelSerializer):
+    cursos = CursoSerializer(many=True, read_only=True)
     class Meta:
         model = Disciplina
-        fields = ['id', 'nome','curso']
+        fields = ['id', 'nome','cursos']
         read_only_fields = ['id']
 
 class VagaSerializer(serializers.ModelSerializer):
@@ -29,42 +33,38 @@ class VagaSerializer(serializers.ModelSerializer):
 # pra post
 class InscricaoCreateSerializer(serializers.ModelSerializer):
     vaga = serializers.PrimaryKeyRelatedField(queryset=Vaga.objects.all())
-
     class Meta:
         model = Inscricao
-        fields = ('vaga', 'arquivo_historico') 
-        
-    def create(self, validated_data):
-        try:
-            aluno = self.context['request'].user.aluno
-        except AttributeError:
-            raise serializers.ValidationError("O usuário logado não é um aluno.")
+        fields = ('vaga', 'arquivo_historico')
 
-        
-        vaga = validated_data.get('vaga')
-        if Inscricao.objects.filter(aluno=aluno, vaga=vaga).exists():
+    def create(self, validated_data):
+        aluno = self.context['request'].user.aluno
+        vaga_recebida = validated_data.get('vaga')
+
+        if Inscricao.objects.filter(aluno=aluno, vaga=vaga_recebida).exists():
             raise serializers.ValidationError("Você já se inscreveu para esta vaga.")
-        
+
         inscricao = Inscricao.objects.create(
             aluno=aluno,
+            status='PENDENTE',
             **validated_data
         )
 
+        # Tenta rodar o analisador automático
         try:
-            url_pdf = inscricao.arquivo_historico.path 
-            
-            analisador = AnalisadorHistorico(vaga)
-            
-            status_final = analisador.analisar_e_decidir(url_pdf)
-            
+            caminho_pdf = inscricao.arquivo_historico.path
+            analisador = AnalisadorHistorico(vaga_recebida=vaga_recebida)
+            status_final = analisador.analisar_e_decidir(caminho_pdf)
+
             if status_final == "APROVADO":
                 inscricao.status = "APROVADO"
                 inscricao.save()
-                
-        except Exception as e:
-            print(f"ERRO no analisador: {e}.")
-            pass 
 
+            if status_final == "REJEITADO":
+                inscricao.status = "REJEITADO"
+                inscricao.save()           
+        except Exception as e:
+             print(f"ERRO no analisador: {e}")
 
         return inscricao
 
@@ -80,6 +80,13 @@ class InscricaoSerializer(serializers.ModelSerializer):
 
 # pra get
 class AlunoSerializer(serializers.ModelSerializer):
+    # O frontend envia o 'slug' (ex: "computacao"), e este campo
+    # automaticamente busca o objeto Curso correspondente no banco.
+    curso = serializers.SlugRelatedField(
+        slug_field='slug',
+        queryset=Curso.objects.all()
+    )
+
     class Meta:
         model = Aluno
         fields = ('matricula', 'curso')
