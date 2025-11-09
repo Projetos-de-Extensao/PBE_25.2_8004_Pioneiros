@@ -42,7 +42,6 @@ class Vaga(models.Model):
 
 
 
-        
 class Aluno(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='aluno')
     matricula = models.CharField(max_length=20, unique=True, verbose_name='Matrícula')
