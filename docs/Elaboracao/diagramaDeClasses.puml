@@ -1,101 +1,57 @@
 @startuml
 
 ' Definição das classes
-class User 
-class Aluno {
-    - matricula: String
+class Curso {
     - nome: String
-    - email: String
-
-    + seCandidatar(): void
-}
-class Professor {
-    - nome: String
-    - email: String
-    - senha: String
-
-    + aprovarCandidato(c: Candidato): void
-    + verRelatorioAcompanhamento(): void
-
-}
-class CASA {
-    - email: String
-    
-    + enviarInformativosEmail(): void
-}
-
-class Candidato {
-    - status: String
-}
-' class AlunoMonitorado {
-'     - aulasParticipadas: int
-
-'     + preencherRelatorioExperiencia(): void
-' }
-
-class TeachingAssistant {
-    - disciplinaMonitora: Disciplina
-
-    + preencherFormularioFrequencias(): void
+    - slug: String
 }
 
 class Disciplina {
     - nome: String
-    - monitor: Teaching Assistant
-    - curso: String
-    - professor: String
-}
-
-class Inscricao {
-    - disciplina: Disciplina
-    - alunos: Candidato[]
+    - curso: Curso[]
 }
 
 class Vaga {
     - disciplina: Disciplina
     - unidade: String
-    - periodo: String
-    - horario: String
 }
 
-' class Entrevista {
-'     - aluno: Candidato
-' }
+class User {
+    - nome: String
+    - email: String
+}
+class Aluno {
+    - user: User
+    - matricula: String
+    - curso: Curso
 
-' class SessaoMonitoria {
-'     - data: LocalDate
-'     - monitorados: AlunoMonitorado[]
-'     - qtdAlunos: int
-' }
+    + InscreverSe(vaga: Vaga): Inscricao
+}
 
-' Relacionamentos de Herança (Generalização)
-' Um Aluno, Professor e CASA são tipos de Usuário.
+class Inscricao {
+    - aluno: Aluno
+    - vaga: Vaga
+    - arquivo_historico: file
+    - status: String
+}
+
+class Admin {
+    - user: User
+
+    + AprovarInscricao(inscricao: Inscricao): void
+    + RejeitarInscricao(inscricao: Inscricao): void
+}
+
 User <|-down- Aluno
-User <|-down- Professor
-User <|-down- CASA
+User <|-down- Admin
+Aluno -[hidden]left- Admin
 
-
-Aluno <|-down- Candidato
-' Aluno <|-down- Monitorado
-Aluno <|-down- TeachingAssistant
-Candidato <-[hidden]left- TeachingAssistant
-
-' Aluno <-[hidden]left- Professor
-' Aluno <-[hidden]left- CASA
-
+Aluno "0..*" --> "1" Curso : está matriculado em
+Aluno "1" --> "0..*" Inscricao : realiza
+Disciplina "1" -right-> "*" Curso : pertence a
 Vaga "1" --> "1" Disciplina
-Candidato "1" --> "1..*" Inscricao : realiza
-Inscricao "*" --> "1" Disciplina : é para
-' Inscricao "1" --> "0..1" Entrevista : pode gerar
-' Entrevista "1" --> "1..*" Candidato : entrevista
-' Entrevista "1" --> "1..*" Professor : conduzida por
-' CASA "1" --> "0..*" Entrevista : agendada por
+Inscricao "*" --> "1" Vaga : é para
+Inscricao "*" <-- "1" Admin : é aprovada por
 
-' O fluxo de monitoria e acompanhamento
-TeachingAssistant "*" --> "*  " Disciplina : atua na
-' TeachingAssistant "1" --> "0..*" SessaoMonitoria : registra
-' SessaoMonitoria "*" --> "1" Disciplina : é sobre
-' Professor "1" --> "0..*" TeachingAssistant : supervisiona
-' CASA "1" --> "0..*" TeachingAssistant : acompanha
 
 @enduml

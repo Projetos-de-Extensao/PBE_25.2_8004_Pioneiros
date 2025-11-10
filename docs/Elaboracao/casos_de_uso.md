@@ -3,9 +3,15 @@ id: diagrama_de_casos de uso
 title: Diagrama de Casos de Uso
 ---
 
-## Casos de Uso
 
-### Criação de uma conta no sistema
+
+## Diagrama de Caso de uso (versão atual)
+![Diagrama de UC](Imagens/DiagramaUC.png)
+
+
+## Documentos de Casos de Uso (modelo antigo)
+
+### Criação de uma conta no sistema 
 
 * Atores:
 	- Usuário
@@ -153,5 +159,3 @@ title: Diagrama de Casos de Uso
 - Pós-condições:
 	- Os emails serão enviados para os candidatos ou TAs
 
-### Diagrama de Caso de uso
-![Diagrama de UC](Imagens/DiagramaUC.png)

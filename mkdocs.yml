@@ -13,14 +13,13 @@ nav:
       - Design Thinking: Iniciacao/design_thinking.md
       - Brainstorming: Iniciacao/brainstorm.md
       - Mapa Mental: Iniciacao/mapa_mental.md
-      - Prototipagem Baixa Fidelidade: Iniciacao/prototipo_baixa_fidelidade.md
   - Elaboração:
       - Index: Elaboracao/index.md
       - Requisitos: Elaboracao/requisitos.md
       - Casos de Uso: Elaboracao/casos_de_uso.md
       - Diagrama de Classes: Elaboracao/diagrama_de_classes.md
       - Diagrama de Sequência: Elaboracao/diagrama_de_sequencia.md
-      - Protótipo de Alta Fidelidade: Elaboracao/prototipo_alta_fidelidade.md
+      - Protótipo de Baixa Fidelidade: Elaboracao/prototipo_baixa_fidelidade.md
   - Construção:
       - Index: Construcao/index.md
       - Git Issues: Construcao/git_issues.md
@@ -82,11 +81,10 @@ markdown_extensions:
       permalink: true
 
 plugins:
-    - search
-    # - plantuml:
-    #   - puml_url: https://www.plantuml.com/plantuml/ 
-    #   - puml_keyword: plantuml
-
+  - search
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      puml_keyword: plantuml
 
 theme:
   name: material

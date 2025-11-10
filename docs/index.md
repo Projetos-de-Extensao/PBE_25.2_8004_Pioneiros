@@ -18,8 +18,8 @@ hide:
      Arthur Maurity, Guilherme Reis, João Arthur e Patrick Gougeon
     
     **Tecnologias Planejadas:**
-     Python (Backend), 
-     Django / Flask (Framework Web)
+     Python (Backend), Django, Restframework, Cors headers e PdfPlumber ]
+     DRF-Spectacular e MkDocs para documentação
 
     [:octicons-arrow-right-24: Acessar o Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8004_I)
 
