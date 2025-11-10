@@ -4,27 +4,22 @@ left to right direction
 
 ' Atores
 actor Organizador
-actor Professor
-actor Candidato
-actor "Teaching Assistant" as TA
+actor Aluno
+actor Sistema
 
 ' Casos de Uso
 rectangle Sistema {
   ' Casos de uso
-  usecase "Agendar entrevista" as UC1
-  usecase "Enviar informativos por email" as UC2
-  usecase "Gerar relatórios de acompanhamento" as UC3
-  usecase "Inscrever aluno no programa" as UC4
-  usecase "Preencher formulário de frequências" as UC5
+  usecase "Aprovar Inscrições" as UC1
+  usecase "Rejeitar Inscrições" as UC2
+  usecase "Inscrever-se no programa" as UC3
 }
 
 ' Relações
-Professor --> UC1
-Professor --> UC2
-Professor --> UC3
-Candidato --> UC4
-TA --> UC5
-Organizador <|-- Professor
-Candidato <|-- TA
+Organizador --> UC1
+Organizador --> UC2
+Sistema --> UC2
+Sistema --> UC1
+Candidato --> UC3
 
 @enduml

@@ -1,43 +1,57 @@
 @startuml
 
 ' Definição das classes
-class Usuario
-class Aluno
-class Professor
-class "CASA (organizador)" as CASA
-class Candidato
-class Monitor
-class "TA (Teaching Assistant)" as TA
-class Disciplina
-class Inscricao
-class Entrevista
-class SessaoMonitoria
+class Curso {
+    - nome: String
+    - slug: String
+}
 
-' Relacionamentos de Herança (Generalização)
-' Um Aluno, Professor e CASA são tipos de Usuário.
-Usuario <|-- Aluno
-Usuario <|-- Professor
-Usuario <|-- CASA
+class Disciplina {
+    - nome: String
+    - curso: Curso[]
+}
 
-' Candidato, Monitor e TA são papéis/especializações de um Aluno.
-Aluno <|-- Candidato
-Aluno <|-- Monitor
-Aluno <|-- TA
+class Vaga {
+    - disciplina: Disciplina
+    - unidade: String
+}
 
-' Relacionamentos de Associação com Multiplicidade
-' O fluxo de inscrição e entrevista
-Candidato "1" --> "1..*" Inscricao : realiza
-Inscricao "*" --> "1" Disciplina : é para
-Inscricao "1" --> "0..1" Entrevista : pode gerar
-Entrevista "1" --> "1..*" Candidato : entrevista
-Entrevista "1" --> "1..*" Professor : conduzida por
-CASA "1" --> "0..*" Entrevista : agendada por
+class User {
+    - nome: String
+    - email: String
+}
+class Aluno {
+    - user: User
+    - matricula: String
+    - curso: Curso
 
-' O fluxo de monitoria e acompanhamento
-TA "*" --> "*" Disciplina : atua na
-TA "1" --> "0..*" SessaoMonitoria : registra
-SessaoMonitoria "*" --> "1" Disciplina : é sobre
-Professor "1" --> "0..*" TA : supervisiona
-CASA "1" --> "0..*" TA : acompanha
+    + InscreverSe(vaga: Vaga): Inscricao
+}
+
+class Inscricao {
+    - aluno: Aluno
+    - vaga: Vaga
+    - arquivo_historico: file
+    - status: String
+}
+
+class Admin {
+    - user: User
+
+    + AprovarInscricao(inscricao: Inscricao): void
+    + RejeitarInscricao(inscricao: Inscricao): void
+}
+
+User <|-down- Aluno
+User <|-down- Admin
+Aluno -[hidden]left- Admin
+
+Aluno "0..*" --> "1" Curso : está matriculado em
+Aluno "1" --> "0..*" Inscricao : realiza
+Disciplina "1" -right-> "*" Curso : pertence a
+Vaga "1" --> "1" Disciplina
+Inscricao "*" --> "1" Vaga : é para
+Inscricao "*" <-- "1" Admin : é aprovada por
+
 
 @enduml
