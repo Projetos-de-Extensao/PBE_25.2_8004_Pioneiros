@@ -8,7 +8,7 @@ actor Aluno
 actor Sistema
 
 ' Casos de Uso
-rectangle Sistema {
+rectangle Programa {
   ' Casos de uso
   usecase "Aprovar Inscrições" as UC1
   usecase "Rejeitar Inscrições" as UC2
@@ -20,6 +20,6 @@ Organizador --> UC1
 Organizador --> UC2
 Sistema --> UC2
 Sistema --> UC1
-Candidato --> UC3
+Aluno --> UC3
 
 @enduml
