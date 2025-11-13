@@ -104,13 +104,23 @@ class CadastroAlunoSerializer(serializers.ModelSerializer):
         model = User
         fields = ('email', 'password', 'first_name', 'last_name', 'aluno')
 
+    def validate_email(self, value):
+        email = value.lower()
+        dominio_correto = '@alunos.ibmec.edu.br'
+        
+        if not email.endswith(dominio_correto):
+            raise serializers.ValidationError(
+                f"E-mail inválido. Utilize seu e-mail institucional ({dominio_correto})."
+            )
+
+        return email
+
     @transaction.atomic
     def create(self, validated_data):
         aluno_data = validated_data.pop('aluno')
         password = validated_data.pop('password')
         email = validated_data.pop('email')
         
-
         try:
             matricula_para_username = aluno_data['matricula']
         except KeyError:
