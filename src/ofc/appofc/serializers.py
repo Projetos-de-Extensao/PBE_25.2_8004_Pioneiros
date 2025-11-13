@@ -50,7 +50,6 @@ class InscricaoCreateSerializer(serializers.ModelSerializer):
             **validated_data
         )
 
-        # Tenta rodar o analisador automático
         try:
             caminho_pdf = inscricao.arquivo_historico.path
             analisador = AnalisadorHistorico(vaga_recebida=vaga_recebida)
@@ -80,8 +79,6 @@ class InscricaoSerializer(serializers.ModelSerializer):
 
 # pra get
 class AlunoSerializer(serializers.ModelSerializer):
-    # O frontend envia o 'slug' (ex: "computacao"), e este campo
-    # automaticamente busca o objeto Curso correspondente no banco.
     curso = serializers.SlugRelatedField(
         slug_field='slug',
         queryset=Curso.objects.all()

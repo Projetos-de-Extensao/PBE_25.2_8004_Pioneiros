@@ -23,7 +23,7 @@ class Curso(models.Model):
         return self.nome
 
 class Disciplina(models.Model):
-    nome = models.CharField(max_length=60)
+    nome = models.CharField(max_length=60, unique=True)
     curso = models.ManyToManyField(Curso, related_name='disciplinas')
 
     def __str__(self):
