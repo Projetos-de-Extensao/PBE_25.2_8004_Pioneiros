@@ -40,6 +40,7 @@ class InscricaoCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         aluno = self.context['request'].user.aluno
         vaga_recebida = validated_data.get('vaga')
+    
 
         if Inscricao.objects.filter(aluno=aluno, vaga=vaga_recebida).exists():
             raise serializers.ValidationError("Você já se inscreveu para esta vaga.")
@@ -52,11 +53,11 @@ class InscricaoCreateSerializer(serializers.ModelSerializer):
 
         try:
             caminho_pdf = inscricao.arquivo_historico.path
-            analisador = AnalisadorHistorico(vaga_recebida=vaga_recebida)
+            analisador = AnalisadorHistorico(vaga_recebida=vaga_recebida, aluno_recebido=aluno)
             status_final = analisador.analisar_e_decidir(caminho_pdf)
 
-            if status_final == "APROVADO":
-                inscricao.status = "APROVADO"
+            if status_final == "CANDIDATURA APROVADA":
+                inscricao.status = "CANDIDATURA APROVADA"
                 inscricao.save()
 
             if status_final == "REJEITADO":

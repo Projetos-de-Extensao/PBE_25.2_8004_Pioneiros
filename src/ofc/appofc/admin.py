@@ -17,7 +17,7 @@ class InscricaoAdmin(admin.ModelAdmin):
     actions = ['aprovar_inscricoes', 'rejeitar_inscricoes']
 
     def aprovar_inscricoes(self, request, queryset):
-        queryset.update(status='APROVADO')
+        queryset.update(status='CANDIDATURA APROVADA')
     aprovar_inscricoes.short_description = "Aprovar inscrições selecionadas"
 
     def rejeitar_inscricoes(self, request, queryset):

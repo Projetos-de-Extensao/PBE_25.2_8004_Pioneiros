@@ -59,10 +59,10 @@ class Inscricao(models.Model):
     arquivo_historico = models.FileField(upload_to='historicos/')
     status_choices = [
         ('PENDENTE', 'Pendente'),
-        ('APROVADO', 'Aprovado'),
+        ('CANDIDATURA APROVADA', 'Candidatura Aprovada'),
         ('REJEITADO', 'Rejeitado'),
     ]
-    status = models.CharField(max_length=10, choices=status_choices, default='PENDENTE')
+    status = models.CharField(max_length=20, choices=status_choices, default='PENDENTE')
     class Meta:
         unique_together = ('vaga', 'aluno')
     
